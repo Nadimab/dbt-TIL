@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: les_velos_de_didier_dwh
+    database: RAW_DATA
+    schema: les_velos_de_didier_dwh
+    tables:
+      - name: customers
+      - name: orders
+      - name: order_items
+      - name: products

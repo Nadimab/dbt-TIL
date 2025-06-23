@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: "Staging model for customers raw data"
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+          - unique
+      - name: state
+        tests:
+          - is_uppercase
+
+  - name: stg_orders
+    description: "Staging model for orders raw data"
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_order_items
+    description: "Staging model for order items raw data"
+    columns:
+      - name: item_id
+        tests:
+          - not_null # For testing in case we have erros.
+          - unique
+
+  - name: stg_products
+    description: "Staging model for products raw data"
+    columns:
+      - name: product_id
+        tests:
+          - not_null
+          - unique
