@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: dm_clients
+    description: "Data mart client avec des indicateurs sur les commandes et les quantités."
+    columns:
+      - name: customer_id
+        description: "Identifiant unique du client."
+        tests:
+          - not_null
+          - unique
+      - name: number_of_orders
+        description: "Nombre total de commandes passées par le client."

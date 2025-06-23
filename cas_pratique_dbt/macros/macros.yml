@@ -1,0 +1,3 @@
+macros:
+  - name: test_is_uppercase
+    description: "This macro checks if the argument is in upper case."

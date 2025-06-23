@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: dm_products
+    description: "Data mart produit avec des indicateurs de vente."
+    columns:
+      - name: product_id
+        description: "Identifiant unique du produit."
+        tests:
+          - not_null
+          - unique
+      - name: total_sales
+        description: "Chiffre d'affaires total généré par le produit."

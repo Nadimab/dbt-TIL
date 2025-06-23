@@ -2,10 +2,28 @@ version: 2
 
 sources:
   - name: les_velos_de_didier_dwh
+    description: "Entrepôt de données pour les vélos de Didier. Cette base contient les données sources des clients, commandes, produits et articles commandés."
     database: RAW_DATA
     schema: les_velos_de_didier_dwh
+
     tables:
       - name: customers
+        description: "Table contenant les informations sur les clients."
+        columns:
+          - name: customer_id
+            description: "Identifiant unique du client."
+          - name: first_name
+            description: "Prénom du client."
+          - name: last_name
+            description: "Nom de famille du client."
+          - name: state
+            description: "État de résidence du client."
+
       - name: orders
+        description: "Table listant les commandes passées par les clients."
+
       - name: order_items
+        description: "Table détaillant les articles inclus dans chaque commande."
+
       - name: products
+        description: "Table contenant les informations sur les produits disponibles."
