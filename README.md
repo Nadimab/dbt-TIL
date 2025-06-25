@@ -3,34 +3,17 @@
 This dbt project transforms raw data from the `les_velos_de_didier_dwh` data warehouse into clean, analytics-ready models. It includes staging models for data cleaning and two data marts: one for clients and one for products.
 
 # Create new virtual environment for dbt
-python -m venv dbt-env
+```bash
+python -m venv dbt-env 
 source dbt-env/Scripts/activate  # On Windows
+```
 
 # Install dbt and the Snowflake adapter
+```bash
 pip install dbt-core dbt-snowflake
----
+```
 
-## Project Structure
-cas_pratique_dbt/
-├── models/
-│   ├── staging/           # Staging models (prefixed with stg_)
-│   │   ├── stg_customers.sql
-│   │   ├── stg_orders.sql
-│   │   ├── stg_order_items.sql
-│   │   └── stg_products.sql
-│   └── marts/             # Business logic models
-│       ├── clients/
-│       │   └── dm_clients.sql
-│       └── products/
-│           └── dm_products.sql
-│   ├── src/
-│       └── src_les_velos_de_didier.yml
-├── tests/                 # Custom tests
-├── macros/                # Macros
-│   └── is_uppercase.sql
-├── dbt_project.yml        # Main project configuration
-└── README.md              # Project documentation
-
+<pre> ```plaintext cas_pratique_dbt/ ├── models/ │ ├── staging/ # Staging models (prefixed with stg_) │ │ ├── stg_customers.sql │ │ ├── stg_orders.sql │ │ ├── stg_order_items.sql │ │ └── stg_products.sql │ └── marts/ # Business logic models │ ├── clients/ │ │ └── dm_clients.sql │ └── products/ │ └── dm_products.sql │ ├── src/ │ └── src_les_velos_de_didier.yml ├── tests/ # Custom tests ├── macros/ # Macros │ └── is_uppercase.sql ├── dbt_project.yml # Main project configuration └── README.md # Project documentation ``` </pre>
 
 # Running all the model
 dbt run
