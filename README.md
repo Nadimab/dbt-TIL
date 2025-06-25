@@ -13,7 +13,29 @@ source dbt-env/Scripts/activate  # On Windows
 pip install dbt-core dbt-snowflake
 ```
 
-<pre> ```plaintext cas_pratique_dbt/ ├── models/ │ ├── staging/ # Staging models (prefixed with stg_) │ │ ├── stg_customers.sql │ │ ├── stg_orders.sql │ │ ├── stg_order_items.sql │ │ └── stg_products.sql │ └── marts/ # Business logic models │ ├── clients/ │ │ └── dm_clients.sql │ └── products/ │ └── dm_products.sql │ ├── src/ │ └── src_les_velos_de_didier.yml ├── tests/ # Custom tests ├── macros/ # Macros │ └── is_uppercase.sql ├── dbt_project.yml # Main project configuration └── README.md # Project documentation ``` </pre>
+## Project Structure
+```plaintext
+cas_pratique_dbt/
+├── models/
+│   ├── staging/           # Staging models (prefixed with stg_)
+│   │   ├── stg_customers.sql
+│   │   ├── stg_orders.sql
+│   │   ├── stg_order_items.sql
+│   │   └── stg_products.sql
+│   └── marts/             # Business logic models
+│       ├── clients/
+│       │   └── dm_clients.sql
+│       └── products/
+│           └── dm_products.sql
+│   ├── src/
+│       └── src_les_velos_de_didier.yml
+├── tests/                 # Custom tests
+├── macros/                # Macros
+│   └── is_uppercase.sql
+├── dbt_project.yml        # Main project configuration
+└── README.md              # Project documentation
+```
+
 
 # Running all the model
 dbt run
